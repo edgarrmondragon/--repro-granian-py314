@@ -1,0 +1,16 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        PYTHON_VERSION: ${PYVER:-3.14-rc}
+    ports:
+    - "8000:8000"
+    volumes:
+    - ./:/app
+    environment:
+      GRANIAN_LOG_LEVEL: "debug"
+      GRANIAN_PORT: "8000"
+      GRANIAN_RELOAD: "1"
+      GRANIAN_WORKERS: "4"
+      RUST_BACKTRACE: "full"
