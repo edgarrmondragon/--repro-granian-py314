@@ -3,6 +3,7 @@ services:
     build:
       context: .
       args:
+        FLAVOR: ${FLAVOR:-trixie}
         PYTHON_VERSION: ${PYVER:-3.14-rc}
     ports:
     - "8000:8000"
